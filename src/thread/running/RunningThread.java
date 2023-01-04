@@ -29,7 +29,7 @@ public class RunningThread extends Thread {
 			lbl.setLocation(speed, i * 100);
 			namelbl.setLocation(speed, i * 100 + 45);
 			try {
-				sleep(100);
+				sleep(40);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
