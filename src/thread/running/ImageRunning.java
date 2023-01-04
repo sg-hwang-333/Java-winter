@@ -24,6 +24,7 @@ public class ImageRunning extends JFrame {
 	JLabel endline;
 	
 	
+	
 	public ImageRunning() {
 		
 		pan = new JPanel();
@@ -61,7 +62,7 @@ public class ImageRunning extends JFrame {
 		lbl[0].addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-            	name[0] = JOptionPane.showInputDialog("말의 이름을 적어주세요!");
+            	name[0] = JOptionPane.showInputDialog("달의 이름을 적어주세요!");
             	namelbl[0].setText(name[0]);
             }
         });
