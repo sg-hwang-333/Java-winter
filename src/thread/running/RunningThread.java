@@ -9,12 +9,14 @@ public class RunningThread extends Thread {
 	int i;
 	static int winNum = 1;
 	JLabel namelbl;
+	String name;
 	
-	public RunningThread(JLabel lbl, int i, JLabel namelbl) {
+	public RunningThread(JLabel lbl, int i, JLabel namelbl, String name) {
 		super();
 		this.lbl = lbl;
 		this.i = i;
 		this.namelbl = namelbl;
+		this.name = name;
 	}
 	
 	public int setSpeed() {
@@ -33,12 +35,12 @@ public class RunningThread extends Thread {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			if (x >= 324 && winNum == 1) {
+			if (x >= 330 && winNum == 1) {
 				winNum++;
 				JOptionPane.showMessageDialog(null, (i+1) + "번째 달이 이겼습니다!");
 				break;
 				
-			} else if(x >= 324) {
+			} else if(x >= 330) {
 				break;
 			}
 			/*else if(winNum > 1) {

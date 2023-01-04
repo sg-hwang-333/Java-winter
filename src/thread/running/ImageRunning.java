@@ -17,11 +17,12 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class ImageRunning extends JFrame {
 	JPanel pan;
-	String name;
+	String name[] = new String[3];
 	JButton startBtn;
 	JLabel lbl[] = new JLabel[3];
 	JLabel namelbl[] = new JLabel[3];
 	JLabel endline;
+	
 	
 	public ImageRunning() {
 		
@@ -29,7 +30,7 @@ public class ImageRunning extends JFrame {
 		pan.setLayout(null);
 		endline = new JLabel(new ImageIcon("Image/결승선.png"));
 		endline.setSize(3,250);
-		endline.setLocation(360, 0);
+		endline.setLocation(330, 0);
 		pan.add(endline);
 		
 		
@@ -52,7 +53,7 @@ public class ImageRunning extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				for (int i = 0; i < 3; i++ ) {
 					RunningThread r;
-					r = new RunningThread(lbl[i], i, namelbl[i]);
+					r = new RunningThread(lbl[i], i, namelbl[i], name[i]);
 					r.start();
 				}
 			}
@@ -60,26 +61,27 @@ public class ImageRunning extends JFrame {
 		lbl[0].addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-            	name = JOptionPane.showInputDialog("말의 이름을 적어주세요!");
-            	namelbl[0].setText(name);
+            	name[0] = JOptionPane.showInputDialog("말의 이름을 적어주세요!");
+            	namelbl[0].setText(name[0]);
             }
         });
 		lbl[1].addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-            	name = JOptionPane.showInputDialog("말의 이름을 적어주세요!");
-            	namelbl[1].setText(name);
+            	name[1] = JOptionPane.showInputDialog("달의 이름을 적어주세요!");
+            	namelbl[1].setText(name[1]);
             }
         });
 		lbl[2].addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-            	name = JOptionPane.showInputDialog("말의 이름을 적어주세요!");
-            	namelbl[2].setText(name);
+            	name[2] = JOptionPane.showInputDialog("달의 이름을 적어주세요!");
+            	namelbl[2].setText(name[2]);
             }
         });
 		startBtn.setSize(70,30);
 		startBtn.setLocation(165, 300);
+		
 		pan.add(startBtn);
 		add(pan);
 		pan.setBackground(Color.WHITE);
